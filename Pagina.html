@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <label for="">Usuário: </label>
+    <input type="text" id="total"><BR>
+    <label for="">GitHub: </label>
+    <input type="text" id="inpGit"><br>
+    <button onclick="calcularCadastro()">Cadastrar</button>
+    <button onclick="mostrarResultado()">Mostrar Tudo</button><BR>
+    <div id="divRelatorio"></div>
+    <script>
+        var frutas = new Array()
+        var gitHubs = []
+        var armazenamento
+        
+        function calcularCadastro()
+        {   
+            gitArmazenamento = document.getElementById("inpGit").value
+            armazenamento = document.getElementById("total").value
+            frutas.push(armazenamento)
+            gitHubs.push(gitArmazenamento)
+            document.getElementById("tota").value = ""
+            document.getElementById("inpGit").value = ""
+            document.getElementById("total").focus()     
+        }
+
+
+
+        function mostrarResultado()
+        {
+            document.getElementById("divRelatorio").innerHTML=""
+            for(i=0;i<frutas.length;i++)
+            {
+                document.getElementById("divRelatorio").innerHTML += "Usuário: " + " " + frutas[i] + "///"
+                document.getElementById("divRelatorio").innerHTML += "Link para o GitHub: " + "https://github.com/" + gitHubs[i] + "<BR>"
+            }
+
+        }
+        // Usar const quando for usar um Array.
+        // Usar let quando for criar uma nova variável.
+
+    </script>  
+</body>
+</html>
